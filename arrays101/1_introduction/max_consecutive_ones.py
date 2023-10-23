@@ -46,7 +46,6 @@ def test_find_max_consecutive_ones(test_input, expected):
 
 def test_complexity(capsys):
     with capsys.disabled():
-        # Generating random test data of length 100
         test_data = lambda n: big_o.datagen.integers(n, 0, 1)
 
         # Calculating the Time complexity

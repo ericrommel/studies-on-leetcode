@@ -50,7 +50,6 @@ def test_find_numbers(test_input, expected):
 
 def test_complexity(capsys):
     with capsys.disabled():
-        # Generating random test data of length 100
         test_data = lambda n: big_o.datagen.integers(n, 1, 10**5)
 
         # Calculating the Time complexity

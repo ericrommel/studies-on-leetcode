@@ -79,7 +79,7 @@ def test_remove_element(test_input, test_val, k_expected, nums_expected):
     assert set(test_input) == set(nums_expected)
 
 
-# Then, from the first try, I saw that once removed, it doesn't need to have an empty value in the end
+# Then, from the first try, I saw that it doesn't need to have an empty value in the end
 @pytest.mark.parametrize("test_input, test_val, k_expected, nums_expected", [
     ([3, 2, 2, 3], 3, 2, [2, 2]),
     ([0, 1, 2, 2, 3, 0, 4, 2], 2, 5, [0, 1, 4, 0, 3]),

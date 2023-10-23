@@ -62,7 +62,6 @@ def test_remove_element(test_input, k_expected, nums_expected):
 
 def test_complexity(capsys):
     with capsys.disabled():
-        # Generating random test data of length 100
         test_data = lambda n: big_o.datagen.integers(n, -100, 100)
 
         # Calculating the Time complexity
