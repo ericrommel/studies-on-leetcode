@@ -22,6 +22,7 @@ All the integers in nums are unique.
 nums is sorted in ascending order.
 """
 import random
+from time import sleep
 
 import big_o
 import pytest
@@ -67,14 +68,16 @@ def test_search(test_input, test_target, expected):
 
 # The lib Big-O currently doesn't support more than 1 parameter to check. This is a workaround but measures can be wrong
 def aux_function(arr):
-    target = random.randint(-10 ** 4, 10 ** 4)
-    Solution().search(nums=arr, target=target)
+    # Select one of the targets in the array
+    target_idx = random.randint(0, len(arr))
+    target = arr[target_idx]
+    return Solution().search(nums=arr, target=target)
 
 
 def test_complexity(capsys):
     with capsys.disabled():
-        test_data = lambda n: big_o.datagen.integers(n, 1, 10**4)
+        test_data = lambda n: sorted(big_o.datagen.integers(n*100, 1, 10**8))  # binary search expects the list to be sorted
 
         # Calculating the Time complexity
-        best, others = big_o.big_o(aux_function, test_data, n_measures=100)
+        best, others = big_o.big_o(aux_function, test_data, n_measures=10, n_repeats=10, return_raw_data=True)
         print(f"\n{big_o.reports.big_o_report(best, others)}")
