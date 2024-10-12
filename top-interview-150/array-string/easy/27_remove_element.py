@@ -78,5 +78,5 @@ def test_solution(nums, val, expected_nums, expected, solution):
         assert nums[i] == expected_nums[i]
 
     # Same check as the previous for statement but uzing zip module
-    for nums, expected_nums in zip(nums, expected_nums):
-        assert nums == expected_nums
+    for num, expected_num in zip(nums, expected_nums):
+        assert num == expected_num

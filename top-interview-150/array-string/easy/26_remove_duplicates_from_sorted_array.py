@@ -68,5 +68,5 @@ def test_solution(nums, expected, expected_nums, solution):
     k = solution.remove_duplicates(nums)
     assert k == len(expected_nums)
 
-    for nums, expected_nums in zip(nums, expected_nums):
-        assert nums == expected_nums
+    for num, expected_num in zip(nums, expected_nums):
+        assert num == expected_num
